@@ -3,33 +3,31 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 
 var engine,world;
-var paper,dustbin1,dustbin2,dustbin3,ground;
-
+var paper,dustbin1;
+var ground;
 
 function setup() {
-	var canvas=createCanvas(800, 700);
-
+	var canvas = createCanvas(800, 700);
 	engine = Engine.create();
 	world = engine.world;
-	
-	dustbin1 = new Dustbin(600, 650, 200, 20);
-	dustbin2 = new Dustbin(600, 650, 200, 20);
-	dustbin3 = new Dustbin(600, 650, 200, 20);
 
-	paper = new Paper(100,600,40,40);
+	ground = Bodies.rectangle(width/2, 660, width, 10 , {isStatic:true} );
+	World.add(world, ground);	
+	dustbin1 = new Dustbin(600, 500, 200, 20);
+    ground = new Ground(400,700,1000,20);
 
-	 //Create a Ground
-	 ground = Bodies.rectangle(width/2, 690, width, 10 , {isStatic:true} );
-	 World.add(world, ground);	
+	paper = new Paper(100,600,);
+
+	 
+	 	
 
 	
 }
 function draw(){
-	background("white");
+	background("orange");
 	Engine.update(engine);
+    ground.display();
 	dustbin1.display();
-	dustbin2.display();
-	dustbin3.display();
 	paper.display();
 }
 

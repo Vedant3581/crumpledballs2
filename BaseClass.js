@@ -13,6 +13,6 @@ class BaseClass{
       }
       display(){
         imageMode(CENTER);
-        image(this.image, this.body.position.x, this.body.position.y,200,300);
+        image(this.image, this.body.position.x, this.body.position.y,this.width,this.height);
       }
 }
