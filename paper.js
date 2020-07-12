@@ -3,10 +3,10 @@ class Paper extends BaseClass{
       super(x,y,70,70);
       this.image = loadImage("sprites/paper.png");
     }    
-
-    display(){
-      super.display();
-    }
+     display(){
+     super.display();
+     }
+     
     fly() {
       this.chain.bodyA=null;
    }
